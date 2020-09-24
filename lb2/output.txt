@@ -1,0 +1,75 @@
+SHELL 10k
+random: 0.008000
+increase: 0.001000
+decrease: 0.018000
+saw: 0.009000
+
+QS 10k
+random: 0.004000
+increase: 0.004000
+decrease: 0.004000
+saw: 0.006000
+
+LQS 10k
+random: 0.004000
+increase: 0.003000
+decrease: 0.004000
+saw: 0.022000
+
+_____________________
+SHELL 20k
+random: 0.020000
+increase: 0.001000
+decrease: 0.089000
+saw: 0.038000
+
+QS 20k
+random: 0.007000
+increase: 0.013000
+decrease: 0.009000
+saw: 0.013000
+
+LQS 20k
+random: 0.011000
+increase: 0.014000
+decrease: 0.013000
+saw: 0.042000
+
+_____________________
+SHELL 50k
+random: 0.266000
+increase: 0.001000
+decrease: 0.585000
+saw: 0.279000
+
+QS 50k
+random: 0.019000
+increase: 0.044000
+decrease: 0.038000
+saw: 0.063000
+
+LQS 50k
+random: 0.016000
+increase: 0.021000
+decrease: 0.021000
+saw: 0.080000
+
+_____________________
+SHELL 100
+random: 0.803000
+increase: 0.002000
+decrease: 1.611000
+saw: 0.802000
+
+QS 100
+random: 0.028000
+increase: 0.042000
+decrease: 0.039000
+saw: 0.134000
+
+LQS 100k
+random: 0.031000
+increase: 0.046000
+decrease: 0.057000
+saw: 0.176000
+

@@ -1,0 +1,4 @@
+﻿  lb2.cpp
+D:\Users\dunke\OneDrive\Рабочий стол\lb2\lb2\lb2.cpp(123,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\Users\dunke\OneDrive\Рабочий стол\lb2\lb2\lb2.cpp(124,6): warning C4101: count: неиспользованная локальная переменная
+  lb2.vcxproj -> D:\Users\dunke\OneDrive\Рабочий стол\lb2\Debug\lb2.exe
