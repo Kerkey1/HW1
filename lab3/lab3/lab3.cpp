@@ -321,7 +321,8 @@ int Circle(int** Array, int** Array2, int N,int M) {
 }
 
 int composition(int** Array, int** Array2, int N, int M) {
-
+	int z1 = -1;
+	int z2 = -1;
 	int Z = N * M;
 	int** Temp = NULL;
 	Temp = (int**)malloc(Z * sizeof(int*));
@@ -329,23 +330,51 @@ int composition(int** Array, int** Array2, int N, int M) {
 	{
 		Temp[i] = (int*)malloc(Z * sizeof(int));
 	}
-
-
+	
+	for (int i = 0; i < Z; i++)
+	{
+		for (int j = 0; j < Z; j++)
+		{
+			Temp[i][j] = 0;
+		}
+		printf("\n");
+	}
 
 	printf("\nДекартово произведение\n");
 
 	for (int i = 0; i < N; i++){
-		for (int j = 0; j < N; j++, j++){
-			for (int k = 0; k < N; k++) {
+		z1++;
+		for (int k = 0; k < N; k++){
+			for (int j = 0; j < N; j++) {
 				for (int l = 0; l < N; l++) {
-					if ((i=k)) {
-						
+					z2++;
+					if (i=k) {
+						Temp[z1][z2] = Array[i][j];
 					}
+					if (j=l) {
+						Temp[z1][z2] = Array2[k][l];
+					}
+					if (z1 = z2) {
+						Temp[z1][z2] = 0;
+					}
+					
 				}
 			}
+			
 		}
+		
 	}
-	output(Temp, N);
+
+	for (int i = 0; i < Z; i++)
+	{
+		for (int j = 0; j < Z; j++)
+		{
+			Temp[j][i] = Temp[i][j];
+		}
+		printf("\n");
+	}
+
+	output(Temp, Z);
 	return **Temp;
 }
 
@@ -390,7 +419,7 @@ void main() {
 	Union(ArrayM1,ArrayM2,N,M);
 	Crossing(ArrayM1,ArrayM2,N,M);
 	Circle(ArrayM1, ArrayM2, N,M);
-	
+	composition(ArrayM1, ArrayM2, N, M);
 
 	ArrayM3 = ArrayM1;
 	printf("Отождествление:\n");
