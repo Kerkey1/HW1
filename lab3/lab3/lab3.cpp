@@ -321,6 +321,7 @@ int Circle(int** Array, int** Array2, int N,int M) {
 }
 
 int composition(int** Array, int** Array2, int N, int M) {
+	int max = N;
 	int z1 = -1;
 	int z2 = -1;
 	int Z = N * M;
@@ -331,30 +332,33 @@ int composition(int** Array, int** Array2, int N, int M) {
 		Temp[i] = (int*)malloc(Z * sizeof(int));
 	}
 	
+	if (M<N) {
+		max = M;
+	}
 	for (int i = 0; i < Z; i++)
 	{
 		for (int j = 0; j < Z; j++)
 		{
 			Temp[i][j] = 0;
 		}
-		printf("\n");
+		
 	}
 
 	printf("\nДекартово произведение\n");
 
-	for (int i = 0; i < N; i++){
+	for (int i = 0; i < max; i++){
 		z1++;
-		for (int k = 0; k < N; k++){
-			for (int j = 0; j < N; j++) {
-				for (int l = 0; l < N; l++) {
+		for (int k = 0; k < max; k++){
+			for (int j = 0; j < max; j++) {
+				for (int l = 0; l < max; l++) {
 					z2++;
-					if (i=k) {
+					if (i==k) {
 						Temp[z1][z2] = Array[i][j];
 					}
-					if (j=l) {
+					if (j==l) {
 						Temp[z1][z2] = Array2[k][l];
 					}
-					if (z1 = z2) {
+					if (z1 == z2) {
 						Temp[z1][z2] = 0;
 					}
 					
@@ -371,7 +375,7 @@ int composition(int** Array, int** Array2, int N, int M) {
 		{
 			Temp[j][i] = Temp[i][j];
 		}
-		printf("\n");
+		
 	}
 
 	output(Temp, Z);

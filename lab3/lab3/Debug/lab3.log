@@ -1,4 +1,4 @@
 ﻿  lab3.cpp
-D:\Users\dunke\OneDrive\Рабочий стол\lab3\lab3\lab3\lab3.cpp(381,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-D:\Users\dunke\OneDrive\Рабочий стол\lab3\lab3\lab3\lab3.cpp(382,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\Users\dunke\OneDrive\Рабочий стол\lab3\lab3\lab3\lab3.cpp(385,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\Users\dunke\OneDrive\Рабочий стол\lab3\lab3\lab3\lab3.cpp(386,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   lab3.vcxproj -> D:\Users\dunke\OneDrive\Рабочий стол\lab3\lab3\Debug\lab3.exe
