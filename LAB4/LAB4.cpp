@@ -1,7 +1,83 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include "Header.h"
+typedef struct NODE{
+	int v;
+	NODE* Next;
+};
+typedef struct LIST {
+	int M;
+	struct NODE** HEAD;
+};
+NODE* CreateNODE(int v){
+	NODE* NewNODE = (NODE*)malloc(sizeof(NODE));
+	NewNODE->v = v;
+	NewNODE->Next = NULL;
+	return NewNODE;
+}
+LIST* CreateLIST(int M) {
+	
+	LIST* list=(LIST*)malloc(sizeof(LIST));
+	list->M=M;
+	list->HEAD=(NODE **)malloc(sizeof(struct NODE*)*M);
+	for (int i = 0; i < M;i++) {
+		list->HEAD[i] = NULL;
+	}
+	return list;
+}
+void AddFirstElement(NODE** HEAD, NODE* NewNODE) {
+	NewNODE->Next = *HEAD;
+	*HEAD = NewNODE;
+}
+void after(NODE* AfterNODE, NODE* NewNODE) {
+	NewNODE->Next = AfterNODE->Next;
+	AfterNODE->Next = NewNODE;
+}
+void before(NODE** HEAD,NODE* BeforeNODE,NODE* NewNODE) {
+	NODE* active = *HEAD;
+	if (*HEAD == BeforeNODE) {
+		AddFirstElement(HEAD,NewNODE);
+		return;
+	}
+	while (active&&active->Next!=BeforeNODE) 
+		active = active->Next;
+	if (active)
+		after(active,NewNODE);
+}
+void AddLastElement(NODE** HEAD, NODE* NewNODE) {
+	NODE* active = *HEAD;
+	if (*HEAD == NULL) {
+		AddFirstElement(HEAD,NewNODE);
+		return;
+	}
+	while (active->Next)
+		active = active->Next;
+	after(active,NewNODE);
+}
+void outputLIST(LIST* list) {
+	NODE* active;
+	for (int i = 0; i < list->M;i++) {
+		printf("%d",i+1);
+		active = list->HEAD[i];
+		while (active!=NULL) {
+			printf("->%d",active->v+1);
+			active = active->Next;
+		}
+		printf("\n");
+	}
+}
+void transfer(int** Array,int N, LIST* list) {
+	for (int i = 0; i < N;i++) {
+		for (int j = 0; j < N;j++) {
+			if(Array[i][j]==1){
+				NODE* NewNODE = CreateNODE(j);
+				AddLastElement(&list->HEAD[i],NewNODE);
+			}
+		}
+	}
+}
 
 void output(int** Array, int N) {
+	printf("\n");
 	for (int i = 0; i < N; i++)
 	{
 		for (int j = 0; j < N; j++)
@@ -12,8 +88,21 @@ void output(int** Array, int N) {
 	}
 }
 
+void DFSLIST(int v,LIST *list, int* visitedArray, int N) {
+	printf("%d ", v + 1);
+
+	visitedArray[v] = 1;
+	NODE* active = list->HEAD[v];
+	while (active) {
+		if (visitedArray[active->v] == 0) {
+			DFSLIST(active->v,list,visitedArray,N);
+		}
+		active = active->Next;
+	}
+}
+
 void Gen(int** Array, int N) {
-	printf("\n");
+	
 
 	for (int i = 0; i < N; i++)
 	{
@@ -30,6 +119,7 @@ void Gen(int** Array, int N) {
 
 	output(Array, N);
 }
+
 void DFS(int u, int** Array, int* visitedArray, int N) {
 	printf("%d ", u+1);
 
@@ -42,22 +132,21 @@ void DFS(int u, int** Array, int* visitedArray, int N) {
 }
 void DFSN(int v, int **Array,int* visitedArray, int N)
 {
-	
 	std::stack<int>S;
 	S.push(v);
-	visitedArray[v] = 1;
 	while (!S.empty()) {
 		v = S.top();
-		printf("%d ", v + 1);
 		S.pop();
-		
-		int i = N - 1;
-		while (i!=0) {
-			if (Array[v][i] == 1 && visitedArray[i] != 1) {
-				visitedArray[i] = 1;
-				S.push(i);
+		if (visitedArray[v]==0) {
+			visitedArray[v] = 1;
+			printf("%d ", v + 1);
+			int i = N - 1;
+			while (i >= 0) {
+				if (Array[v][i] == 1 && visitedArray[i] == 0) {
+					S.push(i);
+				}
+				i--;
 			}
-			i--;
 		}
 	}
 }
@@ -70,7 +159,6 @@ int main()
 	int N = 0;
 	int u= 0;
 	int** ArrayM1 = NULL;
-	int** ArrayM2 = NULL;
 	int* Visitedarray = NULL;
 	
 	printf("Введите размерность матрицы:");
@@ -88,16 +176,7 @@ int main()
 		Visitedarray[i] = 0;
 	}
 
-	printf("Введите размерность матрицы:");
-	scanf("%d", &M);
-	ArrayM2 = (int**)malloc(M * sizeof(int*));
-	for (int i = 0; i < M; i++)
-	{
-		ArrayM2[i] = (int*)malloc(M * sizeof(int));
-	}
-	Gen(ArrayM2, M);
-
-	printf("\n");
+	printf(" Рекурсивный\n");
 	for (int i = 0; i < N; i++) {
 		if ( Visitedarray[i] == 0) {
 			
@@ -109,17 +188,26 @@ int main()
 	for (int i = 0; i < N; i++) {
 		Visitedarray[i] = 0;
 	}
-	printf("\n");
+	printf("Не рекурсивный\n");
 	
 
 		for (int i = 0; i < N; i++) {
 			if (Visitedarray[i] == 0) {
-
 				DFSN(i, ArrayM1, Visitedarray, N);
 			}
 		}
-	
-	
+		LIST* list = CreateLIST(N);
+		transfer(ArrayM1, N,list);
+		printf("\n");
+		outputLIST(list);
+		for (int i = 0; i < N; i++) {
+			Visitedarray[i] = 0;
+		}
+		for (int i = 0; i < N; i++) {
+			if (Visitedarray[i] == 0) {
+				DFSLIST(i, list, Visitedarray, N);
+			}
+		}
 }
 
 

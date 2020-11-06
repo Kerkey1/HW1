@@ -1,3 +1,5 @@
 ﻿  LAB4.cpp
-D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\lab 4\LAB4\LAB4\LAB4.cpp(67,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  LAB4.vcxproj -> D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\lab 4\LAB4\Debug\LAB4.exe
+C:\Users\USER\Desktop\lb1.2\hw\hw\LAB4\LAB4.cpp(6,2): warning C4091: typedef : пропускается слева от "NODE", когда ни одна переменная не объявлена
+C:\Users\USER\Desktop\lb1.2\hw\hw\LAB4\LAB4.cpp(10,2): warning C4091: typedef : пропускается слева от "LIST", когда ни одна переменная не объявлена
+C:\Users\USER\Desktop\lb1.2\hw\hw\LAB4\LAB4.cpp(156,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  LAB4.vcxproj -> C:\Users\USER\Desktop\lb1.2\hw\hw\Debug\LAB4.exe
