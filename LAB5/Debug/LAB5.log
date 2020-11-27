@@ -1,0 +1,6 @@
+﻿  LAB5.cpp
+D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LAB5\LAB5\LAB5.cpp(7,2): warning C4091: typedef : пропускается слева от "NODE", когда ни одна переменная не объявлена
+D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LAB5\LAB5\LAB5.cpp(11,2): warning C4091: typedef : пропускается слева от "LIST", когда ни одна переменная не объявлена
+D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LAB5\LAB5\LAB5.cpp(176,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LAB5\LAB5\LAB5.cpp(177,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  LAB5.vcxproj -> D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LAB5\Debug\LAB5.exe
