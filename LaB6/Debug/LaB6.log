@@ -1,0 +1,7 @@
+﻿  LaB6.cpp
+D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LaB6\LaB6\LaB6.cpp(7,2): warning C4091: typedef : пропускается слева от "NODE", когда ни одна переменная не объявлена
+D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LaB6\LaB6\LaB6.cpp(11,2): warning C4091: typedef : пропускается слева от "LIST", когда ни одна переменная не объявлена
+D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LaB6\LaB6\LaB6.cpp(195,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LaB6\LaB6\LaB6.cpp(196,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  LINK : не найден или не выполнена сборка D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LaB6\Debug\LaB6.exe при последней инкрементной компоновке; выполняется полная компоновка
+  LaB6.vcxproj -> D:\Users\dunke\OneDrive\Рабочий стол\ПАПОЧКи\Учёба\2 курс\1 скм\Алг\LaB6\Debug\LaB6.exe
