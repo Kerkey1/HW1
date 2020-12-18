@@ -1,0 +1,3 @@
+﻿  KURS.cpp
+C:\Users\USER\Desktop\курсовая\KURS\KURS\KURS.cpp(81,20): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  KURS.vcxproj -> C:\Users\USER\Desktop\курсовая\KURS\Debug\KURS.exe
