@@ -1,0 +1,3 @@
+﻿  LAB8.cpp
+D:\Users\dunke\OneDrive\Рабочий стол\папки\Учёба\2 курс\1 скм\Алг\LAB8\LAB8\LAB8.cpp(81,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  LAB8.vcxproj -> D:\Users\dunke\OneDrive\Рабочий стол\папки\Учёба\2 курс\1 скм\Алг\LAB8\x64\Debug\LAB8.exe
